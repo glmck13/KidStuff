@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Icon=/home/pi/opt/piapp/piapp.svg
+Exec=/home/pi/opt/piapp/piapp.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=piapp
+Name=piapp
+Comment[en_US]=
+Comment=
