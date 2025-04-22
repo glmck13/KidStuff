@@ -1,2 +1,2 @@
 # Pygames-for-Kids
-Collection of learning games for the grandkids
+Collection of apps & games for the grandkids
