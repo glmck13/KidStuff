@@ -98,7 +98,6 @@
     audioElement.autoplay = true;
     const ringElement = new Audio();
     ringElement.loop = true;
-    ringElement.src = "ringtone.mp3";
     const server = "mckspot.net";
     const extension = args[0];
     const password = args[1];
@@ -139,6 +138,7 @@
         },
         onCallReceived: async () => {
             setButtons([0,1,1]);
+            ringElement.src = "ringtone.mp3";
             ringElement.load();
             ringElement.play();
         }
@@ -165,6 +165,9 @@
     function placeCall () {
             console.log(`Calling ${dialpad.value}`);
             setButtons([1,0,1]);
+            ringElement.src = "calltone.mp3";
+            ringElement.load();
+            ringElement.play();
             simpleUser
                     .call("sip:" + dialpad.value + '@' + server, {
                     inviteWithoutSdp: false
