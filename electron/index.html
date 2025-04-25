@@ -7,7 +7,6 @@
 <body>
 
 <div id="music" style='display: none;'>
-<h1>Music</h1>
 <audio id="musicElement"></audio>
 <button
     onclick='musicElement.pause();'
@@ -46,21 +45,31 @@
 </div>
 </div>
 
+<hr>
+<div class="flex three">
 <div id="games" style='display: none;'>
-<h1>Games</h1>
-<img width=180 tabindex="0" src="https://mckspot.net:8443/app/PBSkids.avif"
-    onclick='window.open("https://pbskids.org/games/music", "_blank", "width=800,height=420").focus();'
-    onkeypress='window.open("https://pbskids.org/games/music", "_blank", "width=800,height=420").focus();'
+<img width=180 tabindex="0" src="games.png"
+    onclick='window.open("https://pbskids.org/daniel/games", "width=800,height=420").focus();'
+    onkeypress='window.open("https://pbskids.org/daniel/games", "width=800,height=420").focus();'
     >
 </div>
 
 <div id="videos" style='display: none;'>
-<h1>Videos</h1>
-<iframe width="480" height="270" src="https://www.youtube.com/embed/E3NOvf9WNAQ" title="🟢 Daniel Tiger LIVE | It’s a Beautiful Day in the Neighborhood Learn with Daniel Tiger! 🐯 | PBS KIDS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img width=180 tabindex="0" src="videos.png"
+    onclick='window.open("https://pbskids.org/daniel/videos", "width=800,height=420").focus();'
+    onkeypress='window.open("https://pbskids.org/daniel/videos", "width=800,height=420").focus();'
+    >
 </div>
 
 <div id="phone" style='display: none;'>
-<h1>Phone</h1>
+<img width=180 tabindex="0" src="telephone.svg"
+    onclick='document.getElementById("dialer").style.display = document.getElementById("dialer").style.display == "block" ? "none" : "block";'
+    onkeypress='document.getElementById("dialer").style.display = document.getElementById("dialer").style.display == "block" ? "none" : "block";'
+    >
+</div>
+</div>
+
+<div id="dialer" style='display: none;'>
 <select onchange="selectTarget(this);">
 <option value="*60" selected>Dialpad</option>
 </select>
@@ -120,9 +129,9 @@
         }
     };
 
-    for (const part of ["music", "videos", "games", "phone"]) {
+    for (const part of ["music", "videos", "games", "phone", "dialer"]) {
         if (args.includes(part)) {
-            document.getElementById(part).style.display = 'block';
+            document.getElementById(part).style.display = "block";
         }
     }
 
@@ -137,6 +146,7 @@
             ringElement.pause();
         },
         onCallReceived: async () => {
+            document.getElementById("dialer").style.display = "block";
             setButtons([0,1,1]);
             ringElement.src = "ringtone.mp3";
             ringElement.load();
