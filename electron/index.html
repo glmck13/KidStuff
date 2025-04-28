@@ -121,17 +121,20 @@
         },
         userAgentOptions: {
             sessionDescriptionHandlerFactoryOptions: {
-                peerConnectionConfiguration: {
-                    iceServers: [{ urls: "stun:stun1.l.google.com:3478" }]
-                }
+                iceGatheringTimeout: 500,
+                    peerConnectionConfiguration: {
+                        iceCandidatePoolSize: 1,
+                        iceServers: [{urls: 'stun:mckblog.net:3478'}]
+                    }
             },
             authorizationPassword: password
         }
     };
 
-    for (const part of ["music", "videos", "games", "phone", "dialer"]) {
-        if (args.includes(part)) {
-            document.getElementById(part).style.display = "block";
+    for (const part of args.slice(2)) {
+        const elem = document.getElementById(part);
+        if (elem) {
+            elem.style.display = "block";
         }
     }
 
