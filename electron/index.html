@@ -121,11 +121,10 @@
         },
         userAgentOptions: {
             sessionDescriptionHandlerFactoryOptions: {
-                iceGatheringTimeout: 500,
-                    peerConnectionConfiguration: {
-                        iceCandidatePoolSize: 1,
-                        iceServers: [{urls: 'stun:mckblog.net:3478'}]
-                    }
+                peerConnectionConfiguration: {
+                    iceCandidatePoolSize: 1,
+                    iceServers: [{urls: 'stun:mckblog.net:3478'}]
+                }
             },
             authorizationPassword: password
         }
