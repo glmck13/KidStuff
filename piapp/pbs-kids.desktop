@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Icon=/home/pi/opt/piapp/pbs-kids-logo.svg
+Exec=chromium-browser https://pbskids.org/games/music
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=PBS Kids
+Comment=
+Categories=Education;

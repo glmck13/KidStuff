@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Icon=/home/pi/opt/piapp/antimicrox.png
+Exec=/home/pi/bin/gamepad.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Antimicrox
+Comment=

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Icon=/home/pi/opt/piapp/telephone.svg
+Exec=chromium-browser https://mckspot.net/phone?7001,789889
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Phone
+Comment=
+Categories=Network;

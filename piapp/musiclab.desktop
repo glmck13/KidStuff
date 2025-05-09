@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Icon=/home/pi/opt/piapp/musical-notes.svg
+Exec=chromium-browser https://musiclab.chromeexperiments.com
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Music Lab
+Comment=
+Categories=Education;
