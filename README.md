@@ -14,12 +14,20 @@ Here's the current list of apps I have installed:
 + [SIP.js phone](https://sipjs.com/): A very simple WebRTC client that makes use of the SIP.js library.  My hope is that the kids can eventually figure out how to use this to call one another.  The client connects to my [home PBX](https://pbxmyhome.mckblog.net)
 
 ## Raspberry Pi hardware
-I have things running on both a Raspberry Pi Model 3b and Raspberry Pi 4 running the latest version of Raspberry Pi OS using Wayland.  Each is equipped with a 128GB microSD card I purchased from Walmart. Both systems are configured with a 7" LCD display and a desktop mounting assembly from [Osoyoo](https://osoyoo.com/).  I also include a basic USB speaker/microphone from [Cyber Acoustics](https://www.cyberacoustics.com/) and a USB gamepad from [Retroflag](https://retroflag.com/). Since the systems will be used by little kids, I also purchased iUniker power supplies with integrated on/off switches. Everything is available on Amazon.  A complete package will cost about $200.
+I have things running on both a Raspberry Pi Model 3b and Raspberry Pi 4 running the latest version of Raspberry Pi OS using Wayland.  Each is equipped with a 128GB microSD card I purchased from Walmart. Both systems are configured with a 7" LCD display and a desktop mounting assembly from [Osoyoo](https://osoyoo.com/).  I also include a basic USB speaker/microphone from [Cyber Acoustics](https://www.cyberacoustics.com/) and a USB gamepad from [Retroflag](https://retroflag.com/). Since the systems will be used by little kids, I equipped each of them with a iUniker power supply that has an on/off switch at the USB end. Everything listed here is available on Amazon.  A complete package costs around $200.
 
-"Why the gamepad?" you ask.  Well, I don't think the kids need a full keyboard just yet (which intentionally limits what other apps/sites they can accees), but I needed something that could input a few essential keyboard/mouse inputs to operate window controls, e.g. enter/exit fullscreen mode, quit, etc.  I'm using [AntiMicroX](https://github.com/AntiMicroX/antimicrox) to map gamepad buttons to the required keyboard/mouse inputs.
+"Why the gamepad?" you ask.  Well, I don't think the kids need a full keyboard just yet (which intentionally limits what other apps/sites they can accees), but I needed something that could emit a few essential window controls, like enter/exit fullscreen mode, quit, etc.  It's easy to map gamepad buttons to the required keyboard/mouse inputs using [AntiMicroX](https://github.com/AntiMicroX/antimicrox).
 
-Lastly, although you can get everything running on a Model 3b Pi, I don't recommend it, since I still encounter cracking/popping on the sound interface which isn't present on the Model 4. I believe this is related to the Wifi/Bluetooth radios, so I do have Bluetooth disabled by specifying the following in /etc/modprobe.d/raspi-blacklist.conf:
+Lastly, although you can get everything running on a Model 3b Pi, I really don't recommend it, since I still encounter cracking/popping on USB audio output which isn't present on the Model 4. Based on some Googling, I believe this is related to the Wifi/Bluetooth radios so I disabled the Bluetooth hardware on my 3b by including the following entries in /etc/modprobe.d/raspi-blacklist.conf:
 ```
 blacklist btbcm
 blacklist hci_uart
+```
+## SSH client config
+Each piapp system connects to a host on the local network to enable remote logins.  Here's how:
++ Execute "ssh-keygen -t ecdsa" on the piapp system, and then save its public key in ~/.ssh/authorized_keys on your local host.
++ Manually login from the piapp server to your local host at least once in order to populate an entry in its ~/.ssh/known_hosts.
++ Update the remote port # in mckbridge.sh, then add the following entry to pi's crontab:
+```
+@reboot $HOME/bin/mckbridge.sh
 ```
