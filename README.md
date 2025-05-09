@@ -31,3 +31,14 @@ Each piapp system connects to a host on the local network to enable remote login
 ```
 @reboot $HOME/bin/mckbridge.sh
 ```
+## Antimicrox
+Build, .local/bin, .local/share, .config/autostart
+
+## Phone
+SIP.js, and picnicss
+
+## GCompris
+qt5-image-formats-plugins 
+
+## KTuberling
+Edit Categories in /usr/share/applications/...
