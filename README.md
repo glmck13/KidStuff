@@ -9,9 +9,40 @@ Here's the current list of apps I have installed:
 + [GCompris](https://www.gcompris.net/): An excellent collection of activities for kids aged 2 and up.
 + [KTuberling](https://apps.kde.org/ktuberling/): A virtual version of "Mr Potato Head".
 + [Tux Paint](https://tuxpaint.org/): A fun paint program for kids.
-+ [PBS kids music games](https://pbskids.org/games/music): A link to the PBS kids music site.  The kids can't seem to get enough of Daniel Tiger!
++ [PBS Kids music games](https://pbskids.org/games/music): A link to the PBS kids music site.  The kids can't seem to get enough of Daniel Tiger!
 + [Chrome music lab](https://musiclab.chromeexperiments.com/): A link to Google's music apps.
 + [SIP.js phone](https://sipjs.com/): A very simple WebRTC client that makes use of the SIP.js library.  My hope is that the kids can eventually figure out how to use this to call one another.  The client connects to my [home PBX](https://pbxmyhome.mckblog.net)
+
+<table>
+  <tr>
+    <th>GCompris</th>
+    <th>KTuberling</th>
+    <th>Tux Paint</th>
+    <th>PBS Kids</th>
+    <th>Musiclab</th>
+    <th>Softphone</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <img width=200 src="https://github.com/glmck13/KidStuff/blob/main/gcompris.png">
+    </td>
+    <td valign="top">
+      <img width=200 src="https://github.com/glmck13/KidStuff/blob/main/ktuberling.png">
+    </td>
+    <td valign="top">
+      <img width=200 src="https://github.com/glmck13/KidStuff/blob/main/tuxpaint.png">
+    </td>
+    <td valign="top">
+      <img width=200 src="https://github.com/glmck13/KidStuff/blob/main/pbskids.png">
+    </td>
+    <td valign="top">
+      <img width=200 src="https://github.com/glmck13/KidStuff/blob/main/musiclab.jpg">
+    </td>
+    <td valign="top">
+      <img width=200 src="https://github.com/glmck13/KidStuff/blob/main/phone.png">
+    </td>
+  </tr>
+</table>
 
 ## Raspberry Pi hardware
 I have things running on both a Raspberry Pi Model 3b and Raspberry Pi 4 running the latest version of Raspberry Pi OS using Wayland.  Each is equipped with a 128GB microSD card I purchased from Walmart. Both systems are configured with a 7" LCD display and a desktop mounting assembly from [Osoyoo](https://osoyoo.com/).  I also include a basic USB speaker/microphone from [Cyber Acoustics](https://www.cyberacoustics.com/) and a USB gamepad from [Retroflag](https://retroflag.com/). Since the systems will be used by little kids, I equipped each of them with a iUniker power supply that has an on/off switch at the USB end. Everything listed here is available on Amazon.  A complete package costs around $200.
