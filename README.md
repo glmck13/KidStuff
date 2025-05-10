@@ -52,10 +52,12 @@ Each piapp system connects to a host on the local network to enable remote login
 
 ## Antimicrox
 As mentioned above, AntiMicroX is used to map gamepad buttons to keyboard/mouse inputs to effect a handful of window controls.  Here's how to set it up:
-+ Follow the [repository's build intrutions](https://github.com/AntiMicroX/antimicrox/blob/master/BUILDING.md) to build an executable directly on your piapp system.  The current release of Raspberry Pi OS uses Qt5, so install those set of package dependencies first.
-+ mkdir ~/.local/bin, and copy the antimicrox executable from your build/bin directory to ~/.local/bin
-+ mkdir ~/.local/share/antimicrox, and download copies of gamecontrollerdb.txt and gamepad.gamecontroller.amgp from this repo into that directory
-+ In order to launch the tool on startup, mkdir ~/.config/autostart, and download a copy of 
++ Follow the [repository's build intrutions](https://github.com/AntiMicroX/antimicrox/blob/master/BUILDING.md) to build an executable directly on your piapp system under ~/opt.  The current release of Raspberry Pi OS uses Qt5, so install those set of package dependencies first.
++ After the build conpletes:
+```
+mkdir -p ~/.local/bin
+ln -s ~/opt/antimicrox/build/bin/antimicrox ~/.local/bin/antimicrox
+```
 
 ## Phone
 SIP.js, and picnicss
