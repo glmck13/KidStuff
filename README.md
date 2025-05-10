@@ -59,7 +59,7 @@ mkdir -p ~/.local/bin
 ln -s ~/opt/antimicrox/build/bin/antimicrox ~/.local/bin/antimicrox
 ```
 
-## GCompris, Ktuberlink, Tux Paint
+## GCompris, Ktuberling, Tux Paint
 Installation of these packages is pretty straighforward.  In the case of GCompris, the qt5-image-formats-plugins dependency is mistakenly ommitted so it needs to be installed manually.  As for ktuberling, the app's launcher is updated so it appears together will all the other apps under the Pi's main Education menu.
 ```
 sudo apt install gcompris-qt qt5-image-formats-plugins ktuberling tuxpaint
