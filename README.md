@@ -23,16 +23,39 @@ Lastly, although you can get everything running on a Model 3b Pi, I really don't
 blacklist btbcm
 blacklist hci_uart
 ```
+## Piapp software
++ Login as pi on your piapp server, and download copies of all the piapp files from this repo into ~/opt/piapp
++ Set the remote port # in mckbridge.sh to a unique value for this system
++ Set the telephone extension # in phone.desktop to a unique value for this system
++ Link files to their appropriate directories on your system:
+```
+chmod +x ~/opt/piapp/*.sh ~/opt/piapp/*.desktop
+mkdir -p ~/bin ~/etc ~/tmp ~/opt/piapp ~/.local/share/antimicrox ~/.config/autostart
+ln -s ~/opt/piapp/mckbridge.sh ~/bin/mckbridge.sh
+ln -s ~/opt/piapp/gamepad.sh ~/bin/gamepad.sh
+ln -s ~/opt/piapp/gamepad.desktop ~/.config/autostart/gamepad.desktop
+ln -s ~/opt/piapp/gamecontrollerdb.txt ~/.local/share/antimicrox/gamecontrollerdb.txt
+ln -s ~/opt/piapp/gamepad.gamecontroller.amgp ~/.local/share/antimicrox/gamepad.gamecontroller.amgp
+ln -s ~/opt/piapp/musiclab.desktop ~/.local/share/applications/musiclab.desktop
+ln -s ~/opt/piapp/pbs-kids.desktop ~/.local/share/applications/pbs-kids.desktop
+ln -s ~/opt/piapp/phone.desktop ~/.local/share/applications/phone.desktop
+```
+
 ## SSH client config
 Each piapp system connects to a host on the local network to enable remote logins.  Here's how:
 + Execute "ssh-keygen -t ecdsa" on the piapp system, and then save its public key in ~/.ssh/authorized_keys on your local host.
 + Manually login from the piapp server to your local host at least once in order to populate an entry in its ~/.ssh/known_hosts.
-+ Update the remote port # in mckbridge.sh, then add the following entry to pi's crontab:
++ Add the following entry to pi's crontab:
 ```
 @reboot $HOME/bin/mckbridge.sh
 ```
+
 ## Antimicrox
-Build, .local/bin, .local/share, .config/autostart
+As mentioned above, AntiMicroX is used to map gamepad buttons to keyboard/mouse inputs to effect a handful of window controls.  Here's how to set it up:
++ Follow the [repository's build intrutions](https://github.com/AntiMicroX/antimicrox/blob/master/BUILDING.md) to build an executable directly on your piapp system.  The current release of Raspberry Pi OS uses Qt5, so install those set of package dependencies first.
++ mkdir ~/.local/bin, and copy the antimicrox executable from your build/bin directory to ~/.local/bin
++ mkdir ~/.local/share/antimicrox, and download copies of gamecontrollerdb.txt and gamepad.gamecontroller.amgp from this repo into that directory
++ In order to launch the tool on startup, mkdir ~/.config/autostart, and download a copy of 
 
 ## Phone
 SIP.js, and picnicss
