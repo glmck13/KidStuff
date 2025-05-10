@@ -56,7 +56,7 @@ As mentioned above, AntiMicroX is used to map gamepad buttons to keyboard/mouse 
 + After the build conpletes:
 ```
 mkdir -p ~/.local/bin
-ln -s ~/opt/antimicrox/build/bin/antimicrox ~/.local/bin/antimicrox
+cp ~/opt/antimicrox/build/bin/antimicrox ~/.local/bin
 ```
 
 ## GCompris, Ktuberling, Tux Paint
