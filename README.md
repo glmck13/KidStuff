@@ -97,8 +97,8 @@ sudo apt install gcompris-qt qt5-image-formats-plugins ktuberling tuxpaint
 sudo sed -i -e "s/^Categories=.*/&Education;/" /usr/share/applications/org.kde.ktuberling.desktop
 ```
 
-## PhoneThe
-The phone app is a barebones client for makng WebRTC calls using [SIP.js](https://sipjs.com/).  It connects to a backend VoIP server - e.g. FreePBX/Asterisk as described in [PBX-My-Home](https://github.com/glmck13/PBX-My-Home) - that's configured with a set of WebRTC extensions.  If you are using Asterisk, here are the relevant PJSIP paramters you need to configure for a WebRTC endpoint:
+## Softphone
+The softphone app is a barebones client for makng WebRTC calls using [SIP.js](https://sipjs.com/).  It connects to a backend VoIP server - e.g. FreePBX/Asterisk as described in [PBX-My-Home](https://github.com/glmck13/PBX-My-Home) - that's configured with a set of WebRTC extensions.  If you are using Asterisk, here are the relevant PJSIP paramters you need to configure for a WebRTC endpoint:
 ```
 transport=0.0.0.0-wss
 use_avpf=yes
