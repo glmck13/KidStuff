@@ -11,7 +11,7 @@ Here's the current list of apps I have installed:
 + [Tux Paint](https://tuxpaint.org/): A fun paint program for kids.
 + [PBS Kids music games](https://pbskids.org/games/music): A link to the PBS kids music site.  The kids can't seem to get enough of Daniel Tiger!
 + [Chrome music lab](https://musiclab.chromeexperiments.com/): A link to Google's music apps.
-+ [SIP.js phone](https://sipjs.com/): A very simple WebRTC client that makes use of the SIP.js library.  My hope is that the kids can eventually figure out how to use this to call one another.  The client connects to my [home PBX](https://pbxmyhome.mckblog.net)
++ [Softphone](https://sipjs.com/): A very simple WebRTC client that makes use of the SIP.js library.  My hope is that the kids can eventually figure out how to use this to call one another.  The client connects to my [home PBX](https://pbxmyhome.mckblog.net)
 
 <table>
   <tr>
