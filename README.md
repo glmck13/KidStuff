@@ -47,7 +47,7 @@ Here's the current list of apps I have installed:
 ## Raspberry Pi hardware
 I have things running on both a Raspberry Pi Model 3b and Raspberry Pi 4 running the latest version of Raspberry Pi OS using Wayland.  Each is equipped with a 128GB microSD card I purchased from Walmart. Both systems are configured with a 7" LCD display and a desktop mounting assembly from [Osoyoo](https://osoyoo.com/).  I also include a basic USB speaker/microphone from [Cyber Acoustics](https://www.cyberacoustics.com/) and a USB gamepad from [Retroflag](https://retroflag.com/). Since the systems will be used by little kids, I equipped each of them with a iUniker power supply that has an on/off switch at the USB end. Everything listed here is available on Amazon.  A complete package costs around $200.
 
-"Why the gamepad?" you ask.  Well, I don't think the kids need a full keyboard just yet (which intentionally limits what other apps/sites they can accees), but I needed something that could emit a few essential window controls, like enter/exit fullscreen mode, quit, etc.  It's easy to map gamepad buttons to the required keyboard/mouse inputs using [AntiMicroX](https://github.com/AntiMicroX/antimicrox).
+"Why the gamepad?" you ask.  Well, I don't think the kids need a full keyboard just yet (which intentionally limits what other apps/sites they can access), but I needed something that could emit a few essential window controls, like enter/exit fullscreen mode, quit, etc.  It's easy to map gamepad buttons to the required keyboard/mouse inputs using [AntiMicroX](https://github.com/AntiMicroX/antimicrox).
 
 Lastly, although you can get everything running on a Model 3b Pi, I really don't recommend it, since I still encounter cracking/popping on USB audio output which isn't present on the Model 4. Based on some Googling, I believe this is related to the Wifi/Bluetooth radios so I disabled the Bluetooth hardware on my 3b by including the following entries in /etc/modprobe.d/raspi-blacklist.conf:
 ```
@@ -73,7 +73,7 @@ ln -s ~/opt/piapp/phone.desktop ~/.local/share/applications/phone.desktop
 ```
 
 ## SSH client config
-Each piapp system connects to a host on the local network to enable remote logins.  Here's how:
+Each piapp system connects to a host on my local network to enable remote logins.  Here's how:
 + Execute "ssh-keygen -t ecdsa" on the piapp system, and then save its public key in ~/.ssh/authorized_keys on your local host.
 + Manually login from the piapp server to your local host at least once in order to populate an entry in its ~/.ssh/known_hosts.
 + Add the following entry to pi's crontab:
@@ -91,7 +91,7 @@ cp ~/opt/antimicrox/build/bin/antimicrox ~/.local/bin
 ```
 
 ## GCompris, Ktuberling, Tux Paint
-Installation of these packages is pretty straighforward.  In the case of GCompris, the qt5-image-formats-plugins dependency is mistakenly ommitted so it needs to be installed manually.  As for ktuberling, the app's launcher is updated so it appears together will all the other apps under the Pi's main Education menu.
+Installation of these packages is pretty straighforward.  In the case of GCompris, the qt5-image-formats-plugins dependency is mistakenly omitted so it needs to be installed manually.  As for ktuberling, I updated the app's launcher so it appears together will all the other apps under the Pi's main Education menu.
 ```
 sudo apt install gcompris-qt qt5-image-formats-plugins ktuberling tuxpaint
 sudo sed -i -e "s/^Categories=.*/&Education;/" /usr/share/applications/org.kde.ktuberling.desktop
