@@ -98,4 +98,4 @@ sudo sed -i -e "s/^Categories=.*/&Education;/" /usr/share/applications/org.kde.k
 ```
 
 ## Phone
-SIP.js, and picnicss
+The phone app is a barebones client for makng WebRTC calls using the SIP.js javascript library.  It assumes you're connecting to a backend VoIP server as described in my [PBX-My-Home repo](https://github.com/glmck13/PBX-My-Home), and that you've configured a set of PJSIP extensions which make use of WebRTC.
