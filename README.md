@@ -64,7 +64,7 @@ chmod +x ~/opt/piapp/*.sh ~/opt/piapp/*.desktop
 mkdir -p ~/bin ~/etc ~/tmp ~/opt/piapp ~/.local/share/antimicrox ~/.config/autostart
 ln -s ~/opt/piapp/mckbridge.sh ~/bin/mckbridge.sh
 ln -s ~/opt/piapp/gamepad.sh ~/bin/gamepad.sh
-ln -s ~/opt/piapp/gamepad.desktop ~/.config/autostart/gamepad.desktop
+ln -s ~/opt/piapp/gamepad.desktop ~/.config/autostart/gFiles found under amepad.desktop
 ln -s ~/opt/piapp/gamecontrollerdb.txt ~/.local/share/antimicrox/gamecontrollerdb.txt
 ln -s ~/opt/piapp/gamepad.gamecontroller.amgp ~/.local/share/antimicrox/gamepad.gamecontroller.amgp
 ln -s ~/opt/piapp/musiclab.desktop ~/.local/share/applications/musiclab.desktop
@@ -114,7 +114,7 @@ dtls_cert_file=/etc/asterisk/keys/mckspot.crt
 dtls_private_key=/etc/asterisk/keys/mckspot.key
 ```
 
-The client code can be served from any HTTP/HTTPS web server configured with:
-+ Files found under the "phone" folder in this repo
-+ [Picnic CSS stylesheet](https://picnicss.com/)
-+ [SIP.js library]( https://github.com/onsip/SIP.js/releases)
+The client code can be served from any HTTP/HTTPS web server that contains the following files:
++ the contents of the the "phone" folder in this repo
++ [the Picnic CSS stylesheet](https://picnicss.com/)
++ [the SIP.js library]( https://github.com/onsip/SIP.js/releases)
