@@ -98,23 +98,7 @@ sudo sed -i -e "s/^Categories=.*/&Education;/" /usr/share/applications/org.kde.k
 ```
 
 ## Softphone
-The softphone app is a barebones client for makng WebRTC calls using [SIP.js](https://sipjs.com/).  It connects to a backend VoIP server - e.g. FreePBX/Asterisk as described in [PBX-My-Home](https://github.com/glmck13/PBX-My-Home) - that's configured with a set of WebRTC extensions.  If you are using Asterisk, here are the relevant PJSIP paramters you need to configure for a WebRTC endpoint:
-```
-transport=0.0.0.0-wss
-use_avpf=yes
-rtcp_mux=yes
-bundle=yes
-ice_support=yes
-send_connected_line=yes
-media_encryption=dtls
-dtls_verify=fingerprint
-dtls_setup=actpass
-dtls_rekey=0
-dtls_cert_file=/etc/asterisk/keys/mckspot.crt
-dtls_private_key=/etc/asterisk/keys/mckspot.key
-```
-
-The client code can be served from any HTTP/HTTPS web server that contains the following files:
-+ the contents of the the "phone" folder in this repo
-+ [the Picnic CSS stylesheet](https://picnicss.com/)
-+ [the SIP.js library]( https://github.com/onsip/SIP.js/releases)
+The softphone app is a barebones client for makng WebRTC calls using [SIP.js](https://sipjs.com/).  It connects to a backend VoIP server - e.g. FreePBX/Asterisk as described in [PBX-My-Home](https://github.com/glmck13/PBX-My-Home) - that's configured with a set of WebRTC extensions. The client code can be served from any HTTP/HTTPS web server that contains the following files:
++ contents of the the "phone" folder under PBX-My-Home
++ [Picnic CSS stylesheet](https://picnicss.com/)
++ [SIP.js library]( https://github.com/onsip/SIP.js/releases)
